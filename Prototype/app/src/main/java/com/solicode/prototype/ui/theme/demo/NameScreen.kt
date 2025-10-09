@@ -39,8 +39,12 @@ fun Fiertname(){
 
             Button(
                 onClick = {
-                    if(text.isNotBlank()){
-                        persons.add(Person(text))
+                    var nameCl = text
+                        .trim()
+                        .replaceFirstChar { it.uppercase() }
+                    if(nameCl.isNotBlank()){
+
+                        persons.add(Person(nameCl))
                         text = " "
                     }
                 }
