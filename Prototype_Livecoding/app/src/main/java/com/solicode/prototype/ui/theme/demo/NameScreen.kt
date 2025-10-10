@@ -39,17 +39,9 @@ fun Fiertname(){
 
             Button(
                 onClick = {
-
-                    var nameCl = text
-                        .trim()
-                        .replaceFirstChar { it.uppercase() }
-                    val exists = persons.any { it.name == nameCl }
-                    var count = 0
-                    if (!exists) {
-                        persons.add(Person(nameCl))
-                        text = "" // Reset input
-                    } else {
-                        count++
+                    if(text.isNotBlank()){
+                        persons.add(Person(text))
+                        text = " "
                     }
                 }
 
@@ -64,7 +56,7 @@ fun Fiertname(){
 
 
         persons.forEach { p ->
-            Text("👤 ${p.name} ", style = MaterialTheme.typography.bodyLarge)
+            Text("👤 ${p.name}", style = MaterialTheme.typography.bodyLarge)
         }
 
     }
