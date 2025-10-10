@@ -20,7 +20,6 @@ fun calculateParkingFee(
     val formatter = DateTimeFormatter.ofPattern("HH:mm")
     val start = LocalTime.parse(startTime, formatter)
     val end = LocalTime.parse(endTime, formatter)
-
     var total = 0.0
     val details = mutableListOf<String>()
 
